@@ -1,0 +1,12 @@
+name: CI Pipeline [Ubuntu]
+
+on: [push, pull_request]
+
+jobs:
+  cregex:
+    name: Build atomic_hash
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: cmake --workflow --preset ci
